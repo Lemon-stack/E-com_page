@@ -1,14 +1,5 @@
 import { Link } from 'react-router-dom';
-let Pname=""
- if(products != null){
- 	const name=products[id-1].name.toLowerCase().replace(/.(?=.)/g, '$&-');
- Pname=name
- }
- const { data: imageUrlData } = supabase.storage
-      .from("productImg")
-      .getPublicUrl("gadget/"+Pname+".jpg");
 
-   const imgUrl = imageUrlData.publicUrl;
 // map thrpugh the product gotten from 'Product.jsx' and output them based on the values we need
 function ProductList({product}){
   return (
