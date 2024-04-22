@@ -22,7 +22,7 @@ let Pname=""
 // fetch request for the image
 const { data: imageUrlData } = supabase.storage
       .from("productImg")
-      .getPublicUrl("gadget/"+Pname+".jpg");
+      .getPublicUrl("gadget/"+Pname);
 
    const imgUrl = imageUrlData.publicUrl;
 
