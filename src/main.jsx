@@ -7,16 +7,15 @@ import Catalogue from './Components/Products/Catalogue.jsx'
 import Home from './Components/Home.jsx'
 import Preview from './Components/Products/Preview.jsx'
 import Product from './Components/Products/Product.jsx'
-
+//import checkImg from './Components/checkImg.jsx'
 const router=createBrowserRouter(
 	createRoutesFromElements(
     <Route path='/' element={<Layout />}>
     <Route path='' element={<Home />}/>
     <Route path='products' element={<Catalogue />}>
     <Route index element={<Product />}/>
-    <Route path='preview' element={<Preview />}>
+    <Route path='preview' element={<Preview />}/>
     <Route path=':id' element={<Preview />}/>
-    </Route>
     </Route>
      
     </Route>
