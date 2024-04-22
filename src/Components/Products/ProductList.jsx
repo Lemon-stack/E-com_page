@@ -7,7 +7,7 @@ function ProductList({product}){
  {product.map(item=>(
   <Link to={`/products/${item.id}`} key={item.id}>
      <div class="flex flex-row justify-items-start items-center bg-gray-50 p-2 m-2 rounded-lg shadow-lg">
-     <img src="./src/assets/pic1.jpg" class="w-32 justify-self-start" alt=""/>
+     <img src={item.url} class="w-32 justify-self-start" alt=""/>
      <div class="flex-col ml-5">
      <h3 class="font-bold text-blue-500 text-lg">{item.name}</h3>
      <span>description</span>
