@@ -14,7 +14,7 @@ export default function Home(){
         numquam ea!
       </p>
 
-        <Link to=""
+        <Link to="/products"
           class="block w-full mt-10 rounded bg-blue-500 px-12 py-3 text-lg font-medium text-white shadow hover:bg-blue-400 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
         >Check them out
         </Link>
