@@ -8,6 +8,8 @@ import Home from './Components/Home.jsx'
 import Preview from './Components/Products/Preview.jsx'
 import Product from './Components/Products/Product.jsx'
 import ErrorPage from './Components/ErrorPage.jsx'
+ import Admin from './Components/Admin.jsx'
+ import Previews from './Components/Previews.jsx'
 //import checkImg from './Components/checkImg.jsx'
 const router=createBrowserRouter(
 	createRoutesFromElements(
@@ -17,6 +19,9 @@ const router=createBrowserRouter(
     <Route index element={<Product />}/>
     <Route path='preview' element={<Preview />}/>
     <Route path=':id' element={<Preview />}/>
+    </Route>
+    <Route path='admin' element={<Admin />}>
+    <Route path='previews' element={<Previews />}/>
     </Route>
     <Route path='*' element={<ErrorPage />}/>
      

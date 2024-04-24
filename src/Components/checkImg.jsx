@@ -29,14 +29,14 @@ export const CheckImg = () => {
         upsert: true,
       });
 
-    const { data: imageUrlData } = supabase.storage
+   /* const { data: imageUrlData } = supabase.storage
       .from("productImg")
       .getPublicUrl("gadget/avatar1.png");
 
     const imgSrcToBeUploadedToBakend = imageUrlData.publicUrl;
 
     console.log({ imgSrcToBeUploadedToBakend });
-
+*/
     if (data?.id) {
       //continue to insert data into the database
     }
