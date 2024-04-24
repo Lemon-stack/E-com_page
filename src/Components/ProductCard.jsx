@@ -27,7 +27,7 @@ export default function ProductCard({product}) {
         async function deleteProduct() {
         try {
             const { data, error } = await supabase
-                .from("products")
+                .from("product")
                 .delete()
                 .eq("id", product.id)
             
