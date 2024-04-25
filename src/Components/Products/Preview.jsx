@@ -7,6 +7,7 @@ export default function Preview(){
   const { id } = useParams();
   const { products, error, isLoading } = useFetchProduct('product');
   const{productName,setProductName}=React.useState(null)
+  
 //store the products.name in a variable for the conversion
     
     // since the data retrieved from from the

@@ -12,7 +12,9 @@ function ProductList({product}){
      <h3 class="font-bold text-blue-500 text-lg">{item.name}</h3>
      <span>description</span>
      <p class="font-extrabold">NGN {item.price}</p>
-     <button class="px-4 py-1 bg-blue-400 text-gray-50 rounded-lg mt-3 shadow-lg">Add to Cart</button>
+     <button 
+     onClick={()=>localStorage.setItem("cart", [item])}
+     class="px-4 py-1 bg-blue-400 text-gray-50 rounded-lg mt-3 shadow-lg">Add to Cart</button>
      </div>
      </div>
   </Link>

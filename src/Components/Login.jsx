@@ -18,24 +18,6 @@ navigate("/admin/dashboard")
  }
 
 
-/*const AdminView = () => {
-const [Authed,setAuthed]=useState(false)
- if (!isAuthed) {
- // push to sign in
- }
-const sessionCookie = localStorage.getItem("accessToken")
-const isAuthed = sessionCookie === accessToken;
-
- 
- return <AdminDataComponent />
-}
-
-const email = "user@.com"
-const password = "liuweiuo"
-*/
-/*Admin logs in with the correct credentials,
-http://yourdomain.com/login
-http://yourdomain.com/admin*/
 
 	return(
 <>

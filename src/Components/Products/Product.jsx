@@ -1,8 +1,18 @@
 import ProductList from "./ProductList.jsx";
 import useFetchProduct from "./useFetchProduct.jsx"
-
+import {useEffect,useState} from 'react'
 export default function Product(){
 	const { error, isLoading, products } = useFetchProduct("product")
+	const[customErrorMsg,setCustomErrorMsg]=useState("")
+	
+	useEffect(()=>{
+	if(error?.message?.startsWith("TypeError")){
+     setCustomErrorMsg("Check your network connection")
+     if(!products==null){
+     	setProduct(null)
+     }
+	}
+	},[error])
 	// get productlist from supabase and then set the props of productList to 'products'
 	return(
 		<>
@@ -10,8 +20,7 @@ export default function Product(){
 		        <svg xmlns="http://www.w3.org/2000/svg" fill="hsl(217, 91.2%, 59.8%)" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-14 h-14">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                 </svg>
-		      <h3 class="text-blue-500 text-2xl font-bold">Sorry,there seems to be an issue processing that</h3>
-		      <p class="text-gray-600">Try checking your network connections</p>
+		      <h3 class="text-blue-500 text-2xl font-bold">{customErrorMsg}</h3>
 		      </div> }
       { isLoading && <div role="status" class="flex justify-center items-center">
     <svg aria-hidden="true" class="w-16 h-16 mx-auto my-60 text-gray-200 animate-spin dark:text-gray-200 fill-blue-500" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
