@@ -42,8 +42,13 @@ export default function ProductCard({product}) {
             alert(error.message);
         }
         
+const { data, error } = await supabase
+  .storage
+  .from('productImg')
+  .remove([`gadget/${product.name.toLowerCase().replace(/\s/g,'')}`])
         
     }
+    //console.log(product.name.toLowerCase().replace(/\s/g,''))
     
     return(
     <div>

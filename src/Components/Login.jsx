@@ -10,7 +10,6 @@ const navigate=useNavigate();
  const submit=(e)=>{
  	e.preventDefault()
 if(passwordInput==password){
-	console.log("in!")
  localStorage.setItem("accessToken", accessToken);
 navigate("/admin/dashboard")
 } else{navigate("/")}

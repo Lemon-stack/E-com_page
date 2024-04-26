@@ -1,11 +1,12 @@
 import {useState,useEffect} from 'react'
-import{Link} from 'react-router-dom'
+import{useNavigate} from 'react-router-dom'
 import useFetchProduct from "./Products/useFetchProduct.jsx"
 import ProductCard from "./ProductCard.jsx"
 
 export default function Dashboard(){
 
 const[customErrorMsg,setCustomErrorMsg]=useState("")
+const navigate=useNavigate();
 	const { error, isLoading, products } = useFetchProduct("product")
 	console.log(error)
 	useEffect(()=>{
@@ -30,17 +31,17 @@ const[customErrorMsg,setCustomErrorMsg]=useState("")
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                 </svg>
 		      <h3 class="text-blue-500 text-2xl font-bold">{customErrorMsg}</h3>
+		      <p>Turn on mobile data and refresh</p>
 		      </div> }
   {products && products?.map(product => (
    <ProductCard key={product.id} product={product}/>
     ))}
     
-  {!isLoading &&  <Link to='/admin/create'>
-    <svg class="w-[55px] h-[55px] text-blue-500 absolute right-5 bottom-24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  {products &&
+    <svg class="w-[55px] h-[55px] text-blue-500 absolute right-5 bottom-24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" onClick={()=>navigate("/admin/dashboard/create")}>
   <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z" clip-rule="evenodd"/>
 </svg>
-
-    </Link>}
+}
   </>
 		)
 }

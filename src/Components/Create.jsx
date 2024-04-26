@@ -3,8 +3,7 @@ import {useState,useEffect} from 'react'
 
 import {useNavigate} from 'react-router-dom'
 export default function Create(){
-	
-const navigate=useNavigate()
+	const navigate=useNavigate();
 	const[error, setError]=useState(null)
 	const[uploadError, setUploadError]=useState(null)
 	
@@ -46,8 +45,8 @@ const navigate=useNavigate()
   useEffect(() =>setGetName(true) , []);
   // upload image
    const submit=async(e)=>{
-   	navigate('/admin/dashboard')
    	e.preventDefault();
+   	navigate("/admin/dashboard")
    	const { data, error } = await supabase.storage
       .from("productImg")
       .upload(`gadget/${productName.toLowerCase().replace(/\s/g,'')}`, image, {
@@ -156,7 +155,7 @@ const navigate=useNavigate()
    />
    <button 
    class="mx-auto w-1/2 font-medium text-gray-50 py-2 rounded-lg mt-4 bg-blue-500 hover:bg-blue-600 outline-0 flex justify-center items-center"
-   type="submit">Next</button>
+   type="submit">Create</button>
    
    </div>
    	)}
