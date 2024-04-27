@@ -6,12 +6,12 @@ function ProductList({product}){
     handleEnquiry(phoneNumber, name, price);
   };
 
- /* const addToCart = (item) => {
+ const addToCart = (item) => {
     // Using localStorage to store items in the cart
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.push(item);
     localStorage.setItem('cart', JSON.stringify(cart));
-  };*/
+  };
   return (
   <div>
  {product.map(item=>(
@@ -22,7 +22,7 @@ function ProductList({product}){
      <img src={item.url} class="size-[9rem] object-cover rounded-lg justify-self-start" alt=""/>
      <div class="flex-col ml-5">
      <h3 class="font-bold text-blue-500 text-lg">{item.name}</h3>
-     <span>description</span>
+     <span>{item.description}</span>
      <p class="font-extrabold">NGN {item.price}</p>
      <div>
      <button 
@@ -35,7 +35,7 @@ function ProductList({product}){
      </button>
      
      <button 
-     onClick={()=>localStorage.setItem("cart", [item])}
+     onClick={()=>addToCart(item)}
      class="px-4 py-1 bg-blue-400 text-gray-50 rounded-lg mt-3 mb-2 shadow-lg">Add to Cart</button>
      </div>
      </div>

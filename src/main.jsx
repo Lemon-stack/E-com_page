@@ -14,6 +14,7 @@ import ErrorPage from './Components/ErrorPage.jsx'
  import Create from './Components/Create.jsx'
  import Previews from './Components/Previews.jsx'
  import Login from './Components/Login.jsx'
+ import Cart from './Components/Products/Cart.jsx'
 const router=createBrowserRouter(
 	createRoutesFromElements(
     <Route path='/' element={<Layout />}>
@@ -23,6 +24,7 @@ const router=createBrowserRouter(
     <Route path='preview' element={<Preview />}/>
     <Route path=':id' element={<Preview />}/>
     </Route>
+    <Route path='cart' element={<Cart />}/>
     <Route path='admin' element={<Admin />}>
     <Route path='login' element={<Login />}/>
     
