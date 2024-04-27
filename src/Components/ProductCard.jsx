@@ -31,24 +31,28 @@ export default function ProductCard({product}) {
         
         async function deleteProduct() {
         try {
-            const { data, error } = await supabase
+            const { data: deleteData, error: deleteError } = await supabase
                 .from("product")
                 .delete()
                 .eq("id", product.id)
             
-            if (error) throw error;
+            if (deleteError) {throw error;}
+            
+      const { data: storageData, error: storageError } = await supabase
+       .storage
+       .from('productImg')
+       .remove([`gadget/${product.name.toLowerCase().replace(/\s/g,'')}`])
+  
+    if (storageError) {
+        throw storageError;
+    }
             window.location.reload();
         } catch (error) {
             alert(error.message);
         }
-        
-const { data, error } = await supabase
-  .storage
-  .from('productImg')
-  .remove([`gadget/${product.name.toLowerCase().replace(/\s/g,'')}`])
+  
         
     }
-    //console.log(product.name.toLowerCase().replace(/\s/g,''))
     
     return(
     <div>
@@ -57,7 +61,7 @@ const { data, error } = await supabase
     <>
     <div class="flex flex-row mx-2 mt-4 shadow-sm rounded-lg">
     <img
-    class="size-[9rem] rounded-l-lg"
+    class="size-[9rem] object-cover rounded-l-lg"
     src={product.url} alt=""/>
     <div class="flex mx-4 flex-col">
     <h2 
@@ -95,7 +99,7 @@ const { data, error } = await supabase
     <>
     <div class="flex flex-row mx-2 mt-4 shadow-sm rounded-lg">
     <img 
-    class="size-[9rem] rounded-l-lg"
+    class="size-[9rem] object-cover rounded-l-lg"
     src={product.url} 
     alt=""/>
     <div class="py-3 flex mx-4 flex-col justify-items-start">
@@ -126,7 +130,7 @@ const { data, error } = await supabase
     
     <div class="flex flex-row mt-3">
     <button 
-    class="mr-2 w-20 border-2 text-gray-500 border-gray-500 rounded-md"
+    class="mr-2 w-20 border-2 text-blue-500 border-blue-500 rounded-md"
     onClick={()=>setEditing(false)}>cancel</button>
     <button 
     class="bg-blue-500 text-white flex items-center justify-center rounded-md w-20 py-1"
