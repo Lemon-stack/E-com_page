@@ -20,10 +20,16 @@ navigate("/admin/dashboard")
 
 	return(
 <>
-    <form onSubmit={submit}>
-    <label for="password">Password</label>
-    <input type="text" id="password" onChange={(e)=>setPasswordInput(e.target.value)}/>
-    <button type="submit">Submit</button>
+    <form 
+    class="flex flex-col bg-white rounded-lg shadow-lg mx-4 mt-20 p-5"
+    onSubmit={submit}>
+    <label class="text-xl text-blue-500 mb-2 font-bold" for="password">Password</label>
+    <input 
+    class="px-3 py-2 text-gray-800 outline-0 rounded-lg bg-blue-100 w-full mb-3"
+    type="text" id="password" onChange={(e)=>setPasswordInput(e.target.value)}/>
+    <button
+    class="bg-blue-500 text-gray-50 font-bold rounded-md w-full flex justify-center items-center text-md mt-4 py-2"
+    type="submit">Submit</button>
     </form>
 	
 </>

@@ -9,6 +9,7 @@ export default function Create(){
 	
 	const [productName, setProductName ] = useState("");
   const [ description, setDescription ] = useState("");
+  const [ details, setDetails ] = useState("");
   const [ price, setPrice] = useState("");
   
  // const [ products, setProducts] = useState([]);
@@ -68,7 +69,8 @@ export default function Create(){
           name: productName,
           description: description,
           price:price,
-          url:imgSrcToBeUploadedToBakend
+          url:imgSrcToBeUploadedToBakend,
+          details:details,
         })
         
        
@@ -137,10 +139,21 @@ export default function Create(){
    class="border-2 border-blue-500 rounded-md p-2 outline-0 mb-4"
    id="description"
    cols="30"
-   rows="6"
+   rows="3"
    required
    onChange={(e) => {
    	setDescription(e.target.value) 
+   }}
+   ></textarea>
+   
+   <label class="text-blue-500 text-xl font-bold mb-3">Details</label>
+   <textarea
+   class="border-2 border-blue-500 rounded-md p-2 outline-0 mb-4"
+   id="details"
+   cols="30"
+   rows="6"
+   onChange={(e) => {
+   	setDetails(e.target.value) 
    }}
    ></textarea>
    
