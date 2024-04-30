@@ -26,11 +26,11 @@ const router=createBrowserRouter(
     <Route path=':id' element={<Preview />}/>
     </Route>
     <Route path='cart' element={<Cart />}/>
+    <Route path='checkout' element={<ContactForm />}/>
     <Route path='admin' element={<Admin />}>
     <Route path='login' element={<Login />}/>
     
     <Route path='dashboard' element={<Dashboard />}>
-    <Route path='checkout' element={<ContactForm />}/>
     <Route path='' element={<Previews />}/>
     <Route path='create' element={<Create />}/>
     </Route>

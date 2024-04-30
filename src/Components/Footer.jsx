@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom"
 export default function Footer(){
 	return(
-    <div class="flex flex-row justify-between items-center align-middle bg-gray-50 px-6 py-5 shadow fixed bottom-0 w-full">
+    <div class="flex flex-row justify-between items-center align-middle bg-gray-50 px-6 py-5 shadow md:hidden fixed bottom-0 w-full">
     
     <NavLink to="/" className={({isActive})=>isActive?'fill-blue-500':"fill-gray-50"
     	
