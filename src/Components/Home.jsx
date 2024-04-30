@@ -5,7 +5,7 @@ export default function Home(){
   <div class="mx-auto max-w-screen-xl px-4 py-28 lg:flex lg:h-screen lg:items-center">
     <div class="mx-auto max-w-xl text-center">
       <img class="w-full"
-      src="/src/assets/bgImg.png" alt=""/>
+      src="./src/assets/bgImg.png" alt=""/>
 
       <p class="mt-4 sm:text-xl/relaxed">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
