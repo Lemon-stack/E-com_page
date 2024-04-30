@@ -14,12 +14,12 @@ function ProductList({product}){
     localStorage.setItem('cart', JSON.stringify(cart));
   };
   return (
-  <div>
+  <div class="md:grid md:grid-cols-2 md:gap-2">
  {product.map(item=>(
  	
  	
   <Link to={`/products/${item.id}`} key={item.id}>
-     <div class="flex flex-row justify-items-start items-center bg-gray-50 p-2 m-2 rounded-lg shadow-lg">
+     <div class="flex flex-row justify-items-start items-center bg-gray-50 p-2 m-2 rounded-lg md:-mb-2 shadow-lg">
      <img src={item.url} class="size-[9rem] object-cover rounded-lg justify-self-start" alt=""/>
      <div class="flex-col ml-5">
      <h3 class="font-bold text-blue-500 text-lg">{item.name}</h3>
@@ -27,7 +27,7 @@ function ProductList({product}){
      <p class="font-extrabold">NGN {item.price}</p>
      <div>
      <button 
-     onClick={()=>handleEnquireClick('09165609408', item.name, item.price)}
+     onClick={()=>handleEnquireClick('+2347054074103', item.name, item.price)}
      class="flex flex-row items-center justify-center px-4 py-1 bg-blue-500 text-gray-50 rounded-lg mt-3 shadow-lg">Enquire
      <svg class="w-[20px] h-[20px] ml-1 text-gray-50 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="hsl(210, 20%, 98%)" viewBox="0 0 24 24">
   <path fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/>

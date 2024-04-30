@@ -21,7 +21,7 @@ navigate("/admin/dashboard")
 	return(
 <>
     <form 
-    class="flex flex-col bg-white rounded-lg shadow-lg mx-4 mt-20 p-5"
+    class="flex flex-col bg-white rounded-lg shadow-lg mx-4 mt-20 p-5 md:mx-72"
     onSubmit={submit}>
     <label class="text-xl text-blue-500 mb-2 font-bold" for="password">Password</label>
     <input 

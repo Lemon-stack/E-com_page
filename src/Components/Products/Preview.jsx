@@ -48,22 +48,22 @@ export default function Preview() {
       </div>}
 
       {product && (
-        <div class="flex flex-col items-start bg-gray-50 p-2 m-2 rounded-lg shadow-lg">
+        <div class="flex flex-col items-start bg-gray-50 p-2 m-2 relative rounded-lg shadow-lg md:flex-row">
           <img
             src={product.url}
             class="size-[21rem] object-cover rounded-lg"
             alt=""
           />
-          <div class="flex-col float-left mt-4 ml-4">
-            <h3 class="font-bold text-blue-500 text-xl">Name: {product.name}</h3>
-            <p class="text-lg">{product.description}</p>
-            <p class="text-lg">{product.details}</p>
-            <div class="text-lg">{product.price}</div>
+          <div class="flex-col md:ml-8 float-left mt-4 ml-4 md:ml-8">
+            <h3 class="font-bold md:text-3xl text-blue-500 text-xl">Name: {product.name}</h3>
+            <p class="text-lg md:text-xl md:mt-3">{product.description}</p>
+            <p class="text-lg md:text-xl">{product.details}</p>
+            <div class="text-lg md:text-xl md:font-extrabold md:mt-1">{product.price}</div>
           </div>
-          <div class="flex flex-row items-center justify-between mx-2">
+          <div class="flex flex-row items-center justify-between mx-2 md:flex-row md:absolute md:right-0 md:bottom-5">
             <button
-              onClick={() => handleEnquireClick('09165609408', product.name, product.price)}
-              class="flex flex-row items-center justify-center px-4 py-1 bg-blue-500 text-gray-50 rounded-lg mt-3 mr-3 shadow-lg"
+              onClick={() => handleEnquireClick('+2347054074103', product.name, product.price)}
+              class="flex flex-row items-center justify-center px-4 py-1 bg-blue-500 md:text-xl text-gray-50 rounded-lg mt-3 mr-3 shadow-lg"
             >
               Enquire
               <svg
@@ -86,7 +86,7 @@ export default function Preview() {
                 />
               </svg>
             </button>
-            <button class="px-4 py-1 bg-blue-500 text-gray-50 rounded-lg mt-3 shadow-lg items-end">
+            <button class="px-4 py-1 bg-blue-500 text-gray-50 rounded-lg mt-3 shadow-lg items-end md:text-xl">
               Add to Cart
             </button>
           </div>

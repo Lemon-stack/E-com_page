@@ -34,24 +34,24 @@ const handleDeleteItem = (index) => {
          <h2 class="font-bold text-blue-500 text-xl">Your Cart</h2>
          <p>Items ({cartItems.length})</p>
       </div>
-        <div class="flex flex-row justify-items-start items-center bg-gray-50 p-2 m-2 rounded-lg shadow-lg">
+        <div class="flex flex-row justify-items-start items-center relative bg-gray-50 p-2 m-2 rounded-lg shadow-lg">
             <div className="cart-items">
                 {cartItems.map((item, index) => (
                     <div key={index} class="flex flex-row mb-5">
-                        <img src={item.url} alt={item.name} class="size-[9rem] object-cover rounded-lg justify-self-start" />
-                        <div class="flex-col ml-3 mt-2">
-                            <h4 class="font-bold text-blue-500 text-lg">{item.name}</h4>
-                            <p>{item.description}</p>
-                            <p class="font-extrabold">NGN {item.price}</p>
+                        <img src={item.url} alt={item.name} class="size-[9rem] object-cover rounded-lg justify-self-start md:size-[12rem]" />
+                        <div class="flex-col ml-3 mt-2 md:ml-8">
+                            <h4 class="font-bold text-blue-500 text-lg md:text-2xl">{item.name}</h4>
+                            <p class="md:text-xl md:mt-2 md:mb-3">{item.description}</p>
+                            <p class="font-extrabold md:text-xl md:mb-3">NGN {item.price}</p>
                        
                        
-                        <button onClick={()=>handleCheckout(item)} class="px-4 py-1 bg-blue-400 text-gray-50 rounded-lg mt-1 shadow-lg">Checkout</button>
+                        <button onClick={()=>handleCheckout(item)} class="px-4 py-1 bg-blue-400 text-gray-50 rounded-lg md:text-lg mt-1 shadow-lg">Checkout</button>
                       
                         </div>
 
                         <svg 
                         onClick={()=>handleDeleteItem(index)}
-                        class="w-[30px] h-[30px] ml-8 text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        class="w-[30px] h-[30px] md:absolute md:mr-2 ml-8 text-blue-500 right-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
 </svg>
                     </div>

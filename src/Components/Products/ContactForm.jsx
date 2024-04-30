@@ -43,7 +43,7 @@ const ContactForm = () => {
     Oops! pls refresh & try again
     </div>}
     <h3 class="mx-6 mt-3 text-2xl text-blue-500 font-bold">Checkout</h3>
-    <form ref={form} class="flex flex-col py-6 px-6 mt-2 mx-4 bg-white shadow-md rounded-lg" onSubmit={sendEmail}>
+    <form ref={form} class="flex flex-col py-6 px-6 mt-2 mx-4 bg-white shadow-md md:mx-64 md:rounded-xl rounded-lg" onSubmit={sendEmail}>
       <label class="flex flex-col items-start justify-center text-blue-500 text-lg font-bold">
         Name:
         <input 

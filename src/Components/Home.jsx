@@ -1,13 +1,11 @@
 import {Link} from 'react-router-dom'
 export default function Home(){
 	return(
-  <section class="bg-white h-full">
+  <section class="bg-center bg-cover h-full">
   <div class="mx-auto max-w-screen-xl px-4 py-28 lg:flex lg:h-screen lg:items-center">
     <div class="mx-auto max-w-xl text-center">
-      <h1 class="text-3xl font-extrabold sm:text-5xl">
-        lorem consequat cillum ut
-        <strong class="font-extrabold text-blue-500 sm:block"> amet do anim. </strong>
-      </h1>
+      <img class="w-full"
+      src="/src/assets/bgImg.png" alt=""/>
 
       <p class="mt-4 sm:text-xl/relaxed">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
