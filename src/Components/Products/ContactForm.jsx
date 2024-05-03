@@ -2,7 +2,7 @@ import React, {useRef,useState} from 'react';
 import emailjs from '@emailjs/browser';
 import {useLocation,useNavigate} from 'react-router-dom'
 const ContactForm = () => {
-	const navigate=useNavigate();
+/*	const navigate=useNavigate();
 	const [success, setSuccess]=useState(false)
 	const [error, setError]=useState(false)
 	const form = useRef();
@@ -30,11 +30,11 @@ const ContactForm = () => {
       });
    
   };
-  
+  */
 
   return (
   	<>
-    {success && 
+    {/*{success && 
     <div class="px-3 py-1 float-right text-blue-500 shadow-md animate-bounce bg-gray-50">
     your Order has been placed
     </div>}
@@ -81,7 +81,8 @@ const ContactForm = () => {
       <button 
       class="bg-blue-500 text-gray-50 py-2 w-full text-lg mt-3 font-bold rounded-md"
       type="submit">Submit</button>
-    </form>
+    </form>*/}
+    <div class="text-xl text-blue-500 font-bold">I just thought i should share, no need to actually send it</div>
     
     </>
   );
