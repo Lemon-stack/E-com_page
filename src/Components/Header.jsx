@@ -10,7 +10,7 @@ export default function Header(){
     <div class="flex flex-row justify-between items-center align-middle bg-blue-500 px-3 py-2">
    <img 
    class="size-[2.2rem] my-1 ml-1"
-   src="./src/assets/logo.png" alt=""/>
+   src="./public/assets/logo.png" alt=""/>
     
 <svg onClick={whatsAppClick}
 class="w-[30px] h-[30px] md:hidden mr-2 text-gray-50 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="hsl(210, 20%, 98%)" viewBox="0 0 24 24">
