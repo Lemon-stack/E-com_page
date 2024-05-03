@@ -82,7 +82,7 @@ const ContactForm = () => {
       class="bg-blue-500 text-gray-50 py-2 w-full text-lg mt-3 font-bold rounded-md"
       type="submit">Submit</button>
     </form>*/}
-    <div class="text-xl text-blue-500 font-bold">I just thought i should share, no need to actually send it</div>
+    <div class="text-xl text-blue-500 font-bold p-4">I just thought i should share, no need to actually send it</div>
     
     </>
   );
